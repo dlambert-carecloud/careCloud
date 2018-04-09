@@ -19,7 +19,7 @@ class ICD10Gen
           k['diag'].each do |x|
             @parents << {code_id: x['name'], desc: x['desc'], chapter: chapter['name'],
                 section_name: k['desc'],
-                inclusionTerm: x['inclusionTerm'].try(:[], 'note') || '', 
+                inclusionTerm: x['inclusionTerm'].try(:[], 'note') || '',
                 includes: x['includes'].try(:[], 'note') || '',
                 excludes1: x['excludes1'].try(:[], 'note') || '', excludes2: x['excludes2'].try(:[], 'note') || '',
                 parent_id: ''}

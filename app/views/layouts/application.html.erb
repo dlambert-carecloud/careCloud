@@ -3,12 +3,32 @@
   <head>
     <title>Cloudish</title>
     <%= csrf_meta_tags %>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="https://sdk.amazonaws.com/js/aws-sdk-2.222.1.min.js"></script> -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= yield %>
+    <div class="tabsWell">
+		<div id="startButtons">
+			<div class="button">
+				<a class="nav-tabs" id="signInButton" href="<%= signup_path %>" title="Sign in">Sign Up</a>
+			</div>
+		</div>
+		<div class="tab-content">
+			<div class="tab-pane" id="userdetails">
+				<p class="text-icon" title="Minimize" id="tabIcon" onclick="toggleTab('usertab');">_</p>
+				<br>
+				<h2 id="usertabtitle">Tokens</h2>
+				<div class="user-form" id="usertab">
+					<pre id="idtoken"> ... </pre>
+          <pre id="acctoken"> ... </pre>
+          <pre id="reftoken"> ... </pre>
+				</div>
+			</div>
+		</div>
+	</div>
   </body>
 </html>
