@@ -7,6 +7,10 @@ class PagesController < ApplicationController
     @pages = Page.all
   end
 
+  def signup
+    # @pages = Page.all
+  end
+
   def indexShow
     @pages = Page.all
   end
