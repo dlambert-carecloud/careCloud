@@ -6,4 +6,5 @@ class SearchController < ApplicationController
     @codes = Code.search params[:q]
   end
 end
+
 end

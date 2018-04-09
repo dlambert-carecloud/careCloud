@@ -4,15 +4,14 @@ def index
 end
 
 def show
-  @code = Code.find params[:id]
+  @codes = Code.all
+  Code.find_by_id(params[:code_id])
 end
 
 
 end
 
-# private
-#   def codes_params
-#     params.require(:code).permit :title, :text
-#   end
-#
-# end
+private
+  def codes_params
+    params.require(:code).permit :desc, :code_id
+  end

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :pages
   resources :codes
   get 'search', to: 'search#search'
+  post 'search', to: 'search#search'
 
+  get "/codes/:code_id" => 'codes#show'
   get "/privacypolicy" => "pages#indexToS"
   get "/termsofservice" => "pages#indexShow"
 

@@ -9,7 +9,7 @@
 <% end %>
 
 <ul>
-  <% @codes.records.each do |code| %>
+  <% @codes.each do |code| %>
     <li>
       <h3>
         <%= link_to code.desc, controller: "codes", action: "show", id: code.code_id%>
