@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409172328) do
+ActiveRecord::Schema.define(version: 20180409193844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20180409172328) do
   create_table "chapters", force: :cascade do |t|
     t.string "chapter_number"
     t.string "description"
+    t.bigint "code_id"
+    t.index ["code_id"], name: "index_chapters_on_code_id"
   end
 
   create_table "codes", force: :cascade do |t|
@@ -89,6 +91,7 @@ ActiveRecord::Schema.define(version: 20180409172328) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "chapters", "codes"
   add_foreign_key "exclusions", "codes"
   add_foreign_key "favorites", "codes"
   add_foreign_key "favorites", "users"

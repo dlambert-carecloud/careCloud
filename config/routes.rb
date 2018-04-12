@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   resources :pages
   resources :codes
-  get '_search', to: 'search#search'
-  post '_search', to: 'search#search'
+  get '/_search', to: 'search#search'
+  post '/_search', to: 'search#search'
 
   get "/codes/:code_id" => 'codes#show'
   get "/privacypolicy" => "pages#indexToS"
