@@ -4,8 +4,9 @@ def index
 end
 
 def show
-  @codes = Code.all
-  Code.find_by_id(params[:code_id])
+  # @codes = Code.find()
+  # @codes = Code.search params[:q]
+  @codes = Code.find(params[:q])
 end
 
 
