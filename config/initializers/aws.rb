@@ -3,12 +3,12 @@
 #   secret_access_key: ENV["SECRET_ACCESS_KEY"],
 #   region: ENV["AWS_REGION"],
 # )
-
-CLIENT = Aws::CognitoIdentity::Client.new({
-  access_key_id: ENV["ACCESS_KEY_ID"],
-  secret_access_key: ENV["SECRET_ACCESS_KEY"],
-  region: ENV["AWS_REGION"],
-})
+#
+# CLIENT = Aws::CognitoIdentity::Client.new({
+#   access_key_id: ENV["ACCESS_KEY_ID"],
+#   secret_access_key: ENV["SECRET_ACCESS_KEY"],
+#   region: ENV["AWS_REGION"],
+# })
 
 # resp = CLIENT.create_identity_pool(params)
 #
