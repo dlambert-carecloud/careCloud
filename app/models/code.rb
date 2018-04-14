@@ -49,7 +49,7 @@ end
     Code.find_by(code_id: self.parent_id)
   end
 
-def self.search(query)
+  def self.search(query)
     __elasticsearch__.search(
       {
         size: 10000,
@@ -58,18 +58,17 @@ def self.search(query)
             query: query,
             fields: ['code_id^10', 'desc']
           }
-            },
-          highlight: {
-            pre_tags: ['<em>'],
-            post_tags: ['</em>'],
-            fields: {
-              code_id: {},
-              desc: {},
-  }
-},
-
+        },
+        highlight: {
+          pre_tags: ['<em>'],
+          post_tags: ['</em>'],
+          fields: {
+            code_id: {},
+            desc: {},
           }
-        )
-      end
+        },
 
+      }
+    )
+  end
 end
