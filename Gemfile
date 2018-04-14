@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'hirb'
 gem 'activesupport', '~> 5.0', '>= 5.0.0.1'
 gem 'aws-sdk', '~> 2'
+gem 'rails-erd'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

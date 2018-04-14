@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/index', to: 'codes#index'
   get '/_search', to: 'search#search'
   post '/_search', to: 'search#search'
+  get '/chapters', to: 'pages#chapters'
+  get '/chapters/:id', to: 'pages#eachChapters'
 
   get "/codes/:code_id" => 'codes#show'
   get "/privacypolicy" => "pages#indexToS"

@@ -11,6 +11,16 @@ class PagesController < ApplicationController
     # @pages = Page.all
   end
 
+  def chapters
+    @chapters = Chapter.all
+    render json: @chapters
+  end
+
+  def eachChapters
+    @chapter = Chapter.find(params[:id]).codes
+    render json: @chapter
+  end
+
   def indexShow
     @pages = Page.all
   end

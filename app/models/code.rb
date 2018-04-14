@@ -10,6 +10,10 @@ class Code < ApplicationRecord
 end
   # index_name Rails.application.class.parent_name.underscore
   # document_type self.name.downcase
+  belongs_to :chapter, foreign_key: :chapter_number, primary_key: :chapter_number, required: false
+  # belongs_to :parent, required: false, class_name: "Code"
+  # has_many :children, class_name: "Code", foreign_key: "parent_id"
+
 
   serialize :includes
   serialize :inclusionTerm
