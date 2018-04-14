@@ -10,30 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409193844) do
+ActiveRecord::Schema.define(version: 20180409172328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "chapters", force: :cascade do |t|
-    t.string "chapter_number"
+  create_table "chapters", primary_key: "chapter_number", force: :cascade do |t|
     t.string "description"
-    t.bigint "code_id"
-    t.index ["code_id"], name: "index_chapters_on_code_id"
   end
 
   create_table "codes", force: :cascade do |t|
     t.string "code_id"
     t.string "desc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "chapter"
-    t.string "section_name"
     t.text "includes"
+    t.text "section_name"
     t.text "excludes1"
     t.text "excludes2"
-    t.string "parent_id"
+    t.text "inclusionCodes"
     t.text "inclusionTerm"
+    t.integer "parent_id"
+    t.integer "chapter_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "exclusions", force: :cascade do |t|
@@ -91,7 +89,6 @@ ActiveRecord::Schema.define(version: 20180409193844) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "chapters", "codes"
   add_foreign_key "exclusions", "codes"
   add_foreign_key "favorites", "codes"
   add_foreign_key "favorites", "users"
