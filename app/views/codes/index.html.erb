@@ -1,0 +1,20 @@
+<%= will_paginate @codes %>
+<table style="width:500px">
+  <thead>
+  <tr>
+    <th>Codes</th>
+    <th style="text-align:right;">Code</th>
+    <th style="text-align:right;">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @codes.each do |code| %>
+      <tr>
+        <td><%= code.code_id %></td>
+        <td style="text-align:right;"><%= code.code_id %></td>
+        <td style="text-align:right;"><%= code.desc %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= will_paginate @codes %>

@@ -1,3 +1,4 @@
+<%= will_paginate @codes %>
 <h1>Code Search</h1>
 
 <%= form_for _search_path, method: :get do |f| %>
@@ -12,8 +13,16 @@
   <% @codes.each do |code| %>
     <li>
       <h3>
-        <%= link_to code.desc, controller: "codes", action: "show", id: code.code_id%>
+        <%= link_to code.try(:highlight).try(:desc) ? code.highlight.desc[0].html_safe : code.desc,
+        controller: "codes",
+        action: "show",
+        id: code.code_id%>
       </h3>
+      <!-- <% if code.try(:highlight).try(:desc) %>
+        <% code.highlight.desc.each do |snippet| %>
+          <p><%= snippet.html_safe %>...</p> -->
+        <% end %>
+      <% end %>
     </li>
   <% end %>
 </ul>

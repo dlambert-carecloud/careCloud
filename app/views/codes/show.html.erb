@@ -1,11 +1,11 @@
 <p>
   <strong>Title:</strong>
-  <%= @codes. %>
-</p>
-
-<p>
-  <strong>Text:</strong>
   <%= @codes.code_id %>
 </p>
 
-<%#= link_to '<- Back', search_path %>
+<p>
+  <strong>Description:</strong>
+  <%= @codes.desc%>
+</p>
+
+<%= link_to '<- Back', _search_path %>

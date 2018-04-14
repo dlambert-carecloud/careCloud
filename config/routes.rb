@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :pages
   resources :codes
+
+  get '/index', to: 'codes#index'
   get '/_search', to: 'search#search'
   post '/_search', to: 'search#search'
 

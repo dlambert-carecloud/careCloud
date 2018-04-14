@@ -1,12 +1,12 @@
 class CodesController < ApplicationController
-def index
-  @codes = Code.all
-end
+  def index
+    @codes = Code.all.paginate(page: params[:page], per_page: 10)
+  end
 
 def show
   # @codes = Code.find()
   # @codes = Code.search params[:q]
-  @codes = Code.find(params[:q])
+  @codes = Code.find_by(params[:q])
 end
 
 
