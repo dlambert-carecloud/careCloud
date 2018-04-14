@@ -16,7 +16,7 @@
         <%= link_to code.try(:highlight).try(:desc) ? code.highlight.desc[0].html_safe : code.desc,
         controller: "codes",
         action: "show",
-        id: code.code_id%>
+        code_id: code.code_id%>
       </h3>
       <!-- <% if code.try(:highlight).try(:desc) %>
         <% code.highlight.desc.each do |snippet| %>

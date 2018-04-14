@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "pages#index"
 
   resources :pages
-  resources :codes
+  resources :codes, except: [:show]
 
   get '/index', to: 'codes#index'
   get '/_search', to: 'search#search'

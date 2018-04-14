@@ -4,7 +4,6 @@ icd10s = ICD10Gen.new
 
 icd10s.chapters.each do |chap|
   chapter = Chapter.create!(chapter_number: chap['name'],description: chap['desc'])
-  puts chap['sectionIndex']['sectionRef'].last['_last']
   parents = icd10s.parents
   loop do
     code = parents.shift
@@ -15,6 +14,6 @@ icd10s.chapters.each do |chap|
   end
 end
 
-icd10s.children.each{ |code| puts Code.create!(code) }
-icd10s.children_2.each{ |code| puts Code.create!(code) }
-icd10s.children_3.each{ |code| puts Code.create!(code) }
+icd10s.children.each{ |code| Code.create!(code) }
+icd10s.children_2.each{ |code| Code.create!(code) }
+icd10s.children_3.each{ |code| Code.create!(code) }

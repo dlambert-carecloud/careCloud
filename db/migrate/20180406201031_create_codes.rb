@@ -10,7 +10,7 @@ class CreateCodes < ActiveRecord::Migration[5.1]
 
       t.text :inclusionCodes
       t.text :inclusionTerm
-      t.integer :parent_id
+      t.string :parent_id
       t.integer :chapter_number, foreign_key: true
 
       t.timestamps

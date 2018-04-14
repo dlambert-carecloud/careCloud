@@ -4,9 +4,11 @@ class CodesController < ApplicationController
   end
 
 def show
-  # @codes = Code.find()
-  # @codes = Code.search params[:q]
-  @codes = Code.find_by(params[:q])
+  code = params[:format].present? ? params[:code_id]+'.'+params[:format] : params[:code_id]
+  @code = Code.find_by(code_id: code )
+  @children = @code.children
+
+  render json: { code: @code, children: @children }
 end
 
 
