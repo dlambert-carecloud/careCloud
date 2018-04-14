@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/_search', to: 'search#search'
   post '/_search', to: 'search#search'
   get '/chapters', to: 'pages#chapters'
-  get '/chapters/:chapter_number', to: 'pages#eachChapters'
+  get '/chapters/:id', to: 'pages#eachChapters'
 
   get "/codes/:code_id" => 'codes#show'
   get "/privacypolicy" => "pages#indexToS"

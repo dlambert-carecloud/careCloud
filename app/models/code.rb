@@ -5,8 +5,8 @@ class Code < ApplicationRecord
   # index_name Rails.application.class.parent_name.underscore
   # document_type self.name.downcase
   belongs_to :chapter, foreign_key: :chapter_number, primary_key: :chapter_number, required: false
-  belongs_to :parent, required: false, class_name: "Code"
-  has_many :children, class_name: "Code", foreign_key: "parent_id"
+  # belongs_to :parent, required: false, class_name: "Code"
+  # has_many :children, class_name: "Code", foreign_key: "parent_id"
 
 
   serialize :includes
@@ -35,11 +35,11 @@ class Code < ApplicationRecord
   #   )
   # end
 
-  # def children
-  #   Code.where(parent_id: self.code_id)
-  # end
+  def children
+    Code.where(parent_id: self.code_id)
+  end
 
-  # def parent
-  #   Code.find_by(code_id: self.parent_id)
-  # end
+  def parent
+    Code.find_by(code_id: self.parent_id)
+  end
 end

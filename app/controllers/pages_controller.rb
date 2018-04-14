@@ -13,18 +13,12 @@ class PagesController < ApplicationController
 
   def chapters
     @chapters = Chapter.all
-    # render json: @chapters
-
-    respond_to do |format|
-      format.json { render json: @chapters }
-    end
+    render json: @chapters
   end
 
   def eachChapters
-    @chapter = Chapter.where( chapter_number: params[:chapter_number])
-
-    render json: @chapter.codes
-
+    @chapter = Chapter.find(params[:id]).codes
+    render json: @chapter
   end
 
   def indexShow
