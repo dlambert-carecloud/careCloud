@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'favorite/create'
+  post 'favorite/create', to: 'favorite#create'
+  resources :favorites
+  resources :users
+
+  post 'favorite/delete', to: 'favorite#destroy'
+
+  get 'favorite/:user_id', to: 'favorite#show'
+
   root "pages#index"
 
   resources :pages
