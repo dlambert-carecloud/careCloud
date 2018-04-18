@@ -8,7 +8,7 @@ class SearchController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: { codes: @codes.map{|x| x._source}, total: @codes.total_entries } }
+      format.json { render json: { codes: @codes.map{|x| x._source}.uniq{|x| x[:code_id]}, total: @codes.total_entries } }
 
     end
 

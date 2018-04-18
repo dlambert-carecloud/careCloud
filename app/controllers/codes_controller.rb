@@ -8,6 +8,7 @@ def show
   @code = Code.find_by(code_id: code )
   @children = @code.children
 
+
   render json: { code: @code, children: @children }
 end
 
