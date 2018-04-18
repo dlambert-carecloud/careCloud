@@ -35,7 +35,7 @@ end
         query: {
           multi_match: {
             query: query,
-            fields: ['code_id^10', 'desc']
+            fields: ['code_id', 'desc']
           }
         },
         highlight: {
