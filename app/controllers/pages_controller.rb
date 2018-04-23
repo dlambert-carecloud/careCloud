@@ -6,10 +6,10 @@ class PagesController < ApplicationController
   def index
     @pages = Page.all
   end
-
-  def signup
-    # @pages = Page.all
-  end
+  #
+  # def signup
+  #   # @pages = Page.all
+  # end
 
   def chapters
     @chapters = Chapter.all
@@ -21,27 +21,27 @@ class PagesController < ApplicationController
     render json: @chapter
   end
 
-  def indexShow
-    @pages = Page.all
-  end
-
-  def indexToS
-    @pages = Page.all
-  end
-
-  # GET /pages/1
-  # GET /pages/1.json
-  def show
-  end
-
-  # GET /pages/new
-  def new
-    @page = Page.new
-  end
-
-  # GET /pages/1/edit
-  def edit
-  end
+  # def indexShow
+  #   @pages = Page.all
+  # end
+  #
+  # def indexToS
+  #   @pages = Page.all
+  # end
+  #
+  # # GET /pages/1
+  # # GET /pages/1.json
+  # def show
+  # end
+  #
+  # # GET /pages/new
+  # def new
+  #   @page = Page.new
+  # end
+  #
+  # # GET /pages/1/edit
+  # def edit
+  # end
 
   # POST /pages
   # POST /pages.json
