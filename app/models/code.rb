@@ -1,13 +1,14 @@
 require 'elasticsearch/model'
+
 class Code < ApplicationRecord
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
   settings index: { number_of_shards: 1 } do
-  mappings dynamic: 'false' do
-    indexes :code_id, analyzer: 'english'
-    indexes :desc, analyzer: 'english'
+    mappings dynamic: 'false' do
+      indexes :code_id, analyzer: 'english'
+      indexes :desc, analyzer: 'english'
+    end
   end
-end
   # index_name Rails.application.class.parent_name.underscore
   # document_type self.name.downcase
   belongs_to :chapter, foreign_key: :chapter_number, primary_key: :chapter_number, required: false
