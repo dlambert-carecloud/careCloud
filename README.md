@@ -13,7 +13,9 @@ Workflow:
 6. Used ElasticSearch as a search engine
 7. Used Redux in React to help manage state
 
+**One app was split into two parts:**
 
-[ReactJS](https://github.com/vprotsan/cloud-react)
-[Ruby onRails](https://github.com/vprotsan/careCloud)
+**[ReactJS](https://github.com/vprotsan/cloud-react)** 
+
+**[Ruby onRails](https://github.com/vprotsan/careCloud)**
 
